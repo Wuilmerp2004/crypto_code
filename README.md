@@ -1,1 +1,1 @@
-![Kapture 2025-10-21 at 03 10 20](https://github.com/user-attachments/assets/0dff2ef5-8a00-4abd-b6e9-fcd67999de9d)
+![Kapture 2025-10-28 at 11 20 36](https://github.com/user-attachments/assets/defeee13-fb8e-41b3-a1ab-6c0e6b7a0af9)

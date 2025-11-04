@@ -1,29 +1,36 @@
-import { useEffect, useState } from "react"
-const API_KEY = import.meta.env.VITE_APP_API_KEY
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const CoinInfo = ({image, name, symbol}) => {
-    const [price, setPrice]= useState(null)
+const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
-    useEffect(() => {
-        const getCoinPrice = async () => {
-            const res= await fetch(`https://min-api.cryptocompare.com/data/price?fsym=${symbol}&tsyms=USD&api_key=` +
-      API_KEY)
-      const json = await res.json()
-      setPrice(json)
-        }
-    getCoinPrice().catch(console.error)
-    },[symbol])
-    return (
-        <li className="main-list" key={symbol}>
-            <img
-                className="icons"
-                src={`https://www.cryptocompare.com${image}`}
-                alt={`Small icon for ${name} crypto coin`}
-            />
-            {name}
-            {price && price.USD ? ` $${price.USD} USD` : null}
-        </li>
-    )
+const CoinInfo = ({ image, name, symbol }) => {
+  const [price, setPrice] = useState(null);
 
-}
-export default CoinInfo
+  useEffect(() => {
+    const getCoinPrice = async () => {
+      const res = await fetch(
+        `https://min-api.cryptocompare.com/data/price?fsym=${symbol}&tsyms=USD&api_key=` + API_KEY
+      );
+      const json = await res.json();
+      setPrice(json);
+    };
+    getCoinPrice().catch(console.error);
+  }, [symbol]);
+
+  return (
+    <li className="main-list" key={symbol}>
+      <Link to={`/coinDetails/${symbol}`} style={{ color: "white", textDecoration: "none" }}>
+        <img
+          className="icons"
+          src={`https://www.cryptocompare.com${image}`}
+          alt={`Small icon for ${name} crypto coin`}
+          style={{ marginRight: "8px", verticalAlign: "middle" }}
+        />
+        {name}
+        {price && price.USD ? ` $${price.USD} USD` : null}
+      </Link>
+    </li>
+  );
+};
+
+export default CoinInfo;

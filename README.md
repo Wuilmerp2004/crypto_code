@@ -33,6 +33,5 @@ This project builds on the foundations of *Crypto Hustle Lite*, adding React Rou
 
 ---
 
-## Project Structure
 
 

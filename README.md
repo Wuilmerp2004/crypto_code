@@ -2,6 +2,8 @@
 
 A React-based cryptocurrency dashboard that displays real-time prices, detailed coin data, and interactive routing for individual crypto assets using the CryptoCompare API.
 
+Vercel Deployment: https://crypto-hustle-code.vercel.app 
+
 ---
 
 ## Overview
